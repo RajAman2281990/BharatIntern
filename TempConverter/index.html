@@ -1,0 +1,107 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Temperature Converter</title> 
+     
+</head> 
+<body> 
+    <style> 
+      body { 
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+} 
+ 
+#container { 
+    max-width: 400px; 
+    margin: 0 auto; 
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+} 
+ 
+h1 { 
+    text-align: center; 
+} 
+ 
+label { 
+    display: block; 
+    margin-bottom: 5px; 
+} 
+ 
+input, button { 
+    width: 100%; 
+    padding: 10px; 
+    margin: 5px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 3px; 
+} 
+ 
+#result { 
+    margin: 20px 0; 
+    text-align: center; 
+} 
+ 
+#div1 { 
+    background-color: #fff; 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+} 
+ 
+    </style> 
+    <h1 id="h1">Temperture Converter</h1> 
+    <div id="container"> 
+      <label id="celcius" for="celcius"><h3>Celcius:</h3></label> 
+      <input id="celIn" placeholder="Enter Celcius" ><br><button  id="b1" onclick="celciusTOFahNKel()">click</button><br><br><br> 
+      <label id="fahrenheit" for="fahrenheit"><h3>Fahrenheit:</h3></label> 
+      <input id="fahIn" placeholder="Enter Fahrenheit"><br><button  id="b1" onclick="fahTOcelNKel()">click</button><br><br><br> 
+      <label id="kelvin" for="kelvin"><h3>Kelvin :</h3></label> 
+      <input id="kelIn" placeholder="Enter kelvin"><br><button  id="b1" onclick="kelTOFahNCel()">click</button><br><br><br> 
+    </div> 
+  <div id="div1"> 
+    <label for="result" id="result"><h3 id="r1">Result:</h3></label> 
+    <div> 
+      <p><span><h5>Celcius:<p id="para1"></p></h5></span></p> 
+      <p><span><h5>Fahrenheit:<p id="para2"></p></h5></span></p> 
+      <p><span><h5>Kelvin:<p id="para3"></p></h5></span></p> 
+    </div> 
+  </div> 
+ 
+<script> 
+   
+  function celciusTOFahNKel() 
+  { 
+    var cel=document.getElementById("celIn").value; 
+    document.getElementById("para1").innerHTML=cel; 
+    var t=parseFloat((cel/5)*9+32); 
+    document.getElementById("para2").innerHTML=t; 
+    var y=parseFloat(cel-273.15+546.30) 
+    document.getElementById("para3").innerHTML=y; 
+  } 
+  function fahTOcelNKel() 
+  { 
+    var fah=document.getElementById("fahIn").value; 
+    document.getElementById("para2").innerHTML=fah; 
+    var q=parseFloat((fah/9)*5-32); 
+    document.getElementById("para1").innerHTML=q; 
+    var w=parseFloat(q-273.15+546.30); 
+    document.getElementById("para3").innerHTML=w; 
+  } 
+  function kelTOFahNCel() 
+  { 
+    var kel=document.getElementById("kelIn").value; 
+    document.getElementById("para3").innerHTML=kel; 
+    var e=parseFloat(((kel-273.15+546.30)/5)*9+32); 
+    document.getElementById("para2").innerHTML=e; 
+    var r=parseFloat(kel-273.15+546.30) 
+    document.getElementById("para1").innerHTML=r; 
+  } 
+ 
+ 
+ 
+</script> 
+</body> 
+</html>
